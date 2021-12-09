@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/post.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/js/main.js">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <div class="head">
+        <div class="head-container">
+            <div class="head-btngroup">
+                <a href="../login/login.html" class="btn btn-login">Login</a>
+                <div class="btn btn-register" id="register">Register</div>
+            </div>
+            <div class="head-brand">
+                <a href="../home/home.html">
+                    <img src="../assets/img/iconfinder_m-16_4230548.png" alt="icon-brand" id="brand">
+                </a>
+            </div>
+            <input type="text" name="search" id="search-bar" placeholder="Nhap tu khoa de tim kiem .." onblur="handleronblur()">
+            <img src="../assets/img/iconfinder_search_5402443.png" alt="icon-search" id="icon-search">
+            <div class="greeting" id="greeting"></div>
+            <div class="nav-bar">
+                <a href="../ranking/ranking.html" class="btn-ranking">TOP <img src="../assets/img/iconfinder_Business_and_Finance_finance_pyramid_6588675.png" alt="arrow-up"></a>
+                <a href="../aboutus/aboutus.html" class="btn-aboutus">About us <img src="../assets/img/iconfinder_about-info-information_2931180.png" alt="info"></a>
+            </div>
+        </div>
+    </div>
+    <div class="register-drop" id="header-drop">
+        <div class="drop-content">
+            <a href="javascript:void(0)" class="close-btn" onclick="closedrop()">&times;</a>
+            <div class="drop-content-container">
+                <input type="email" id="email" placeholder="Enter your email..">
+                <button class="btn btn-join">Join us</button>
+            </div>
+            <div class="greeting-drop">
+                For more information about TECH, LIFE, SCIENCE, ...
+            </div>
+        </div>
+    </div>
+    <!------------------------------------end of header ----------------------------------------------------->
+    
+    <!---------------------------------------------------- col1 --------------------------------------------->
+    <div class="reactions">
+        <div class="react-heart" onclick="heart()"">
+            <i class="icon icon-heart"></i>
+        </div>
+        <div id="click-heart"></div>
+        <div class="react-donate" onclick="gift()">
+            <i class="icon icon-donate" ></i>
+        </div>
+        <div id="click-donate"></div>
+        <div class="react-comment">
+            <i class="icon icon-comment"></i>   
+        </div>
+        <div id="count-comment">69</div> 
+        <div class="react-share" >
+            <i class="icon icon-share" onclick="showdrop()"></i>
+        </div>
+    </div>
+    <div id="dropdown">
+            
+            <a href="#"><i class="icon-share icon-facebook"></i></a>
+           
+            <a href="#"><i class="icon-share icon-telegram"></i></a>
+           
+            <a href="#"><i class="icon-share icon-insta"></i></a>
+          
+            <a href="#"><i class="icon-share icon-drive"></i></a>
+        </div>
+        
+    <!------------------------------------------- col2 ------------------------------------------------------>
+    <div class="main-post">
+        <div class="post-content">
+            <img src="../assets/img/post1-col1.jpg" alt="post1-col1">
+            <div class="post-detail">
+                <div class="post-type">TECH</div>
+                <h1>What is DevOps ?</h1> 
+                <span class="author">AUTHOR 2</span><br>
+                <span class="item-author">25 March, 2021</span>
+                <h4>DevOps definition</h4>
+                <p>A compound of development (Dev) and operations (Ops), DevOps is the union of people, process, and technology to continually provide value to customers.</p>
+                <br>
+                <p>What does DevOps mean for teams? DevOps enables formerly siloed roles—development, IT operations, quality engineering, and security—to coordinate and collaborate to produce better, more reliable products. By adopting a DevOps culture along with DevOps practices and tools, teams gain the ability to better respond to customer needs, increase confidence in the applications they build, and achieve business goals faster.</p>
+                <h4>The benefits of DevOps</h4>
+                <p>Teams that adopt DevOps culture, practices, and tools become high-performing, building better products faster for greater customer satisfaction. This improved collaboration and productivity is also integral to achieving business goals like these:</p>
+                <p>- Accelerating time to market</p>
+                <p>- Adapting to the market and competition</p>
+                <p>- Maintaining system stability and reliability</p>
+                <p>- Improving the mean time to recovery</p>
+                <h5>Related: </h5>
+                <div class="post-grouplink">
+                    <a href="#">What is HTML5?</a> <br>
+                    <a href="#">How to use CSS3</a> <br>
+                    <a href="#">Javascript - The most popular programming language, isn't it ?</a>
+                </div>
+            </div>
+        </div>
+        <div class="post-author">
+            <div class="w-5 h-5">
+                <!-- <img src="../assets/img/iconfinder_batman_hero_avatar_comics_4043232.png" alt="ava-author"> -->
+            </div>
+            <div class="author-detail">
+                <h4>Name</h4>
+                <div class="author-name">AUTHOR 2</div>
+                <h4>Work</h4>
+                    <p>DevOps Engineer at Somewhere</p>
+                <h4>Location</h4>
+                    <p>Somewhere</p>
+                <h4>Joined</h4> 
+                    <p>Mar 8, 2000</p>
+            </div>
+            
+        </div>
+    </div>
+    <!------------------------------------------------ footer ----------------------------------------------->
+    <div class="foot">
+        <div class="foot-container">
+            <div class="share-group">
+                <a href="#"><i class="icon icon-facebook"></i></a>
+                <a href="#"><i class="icon icon-youtube"></i></a>
+                <a href="#"><i class="icon icon-insta"></i></a>
+                <a href="#"><i class="icon icon-drive"></i></a>
+                <a href="#"><i class="icon icon-telegram"></i></a>
+            </div>
+            <div class="about-us"> Trang cập nhật và chia sẻ thông tin khoa học và công nghệ</div>
+            <div class="contact">Email: epu@gmail.com</div>
+        </div>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

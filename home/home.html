@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+        <div class="head">
+            <div class="head-container">
+                <div class="head-btngroup">
+                    <a href="../login/login.html" class="btn btn-login">Login</a>
+                    <div class="btn btn-register" id="register">Register</div>
+                </div>
+                <div class="head-brand">
+                    <a href="../home/home.html">
+                        <img src="../assets/img/iconfinder_m-16_4230548.png" alt="icon-brand" id="brand">
+                    </a>
+                </div>
+                <input type="text" name="search" id="search-bar" placeholder="Nhap tu khoa de tim kiem .." onblur="handleronblur()">
+                <img src="../assets/img/iconfinder_search_5402443.png" alt="icon-search" id="icon-search">
+                <div class="greeting" id="greeting"></div>
+                <div class="nav-bar">
+                    <a href="../ranking/ranking.html" class="btn-ranking">TOP <img src="../assets/img/iconfinder_Business_and_Finance_finance_pyramid_6588675.png" alt="arrow-up"></a>
+                    <a href="../aboutus/aboutus.html" class="btn-aboutus">About us <img src="../assets/img/iconfinder_about-info-information_2931180.png" alt="info"></a>
+                </div>
+            </div>
+        </div>
+        <div class="register-drop" id="header-drop">
+            <div class="drop-content">
+                <a href="javascript:void(0)" class="close-btn" onclick="closedrop()">&times;</a>
+                <div class="drop-content-container">
+                    <input type="email" id="email" placeholder="Enter your email..">
+                    <button class="btn btn-join">Join us</button>
+                </div>
+                <div class="greeting-drop">
+                    For more information about TECH, LIFE, SCIENCE, ...
+                </div>
+            </div>
+        </div>
+    <!--------------------------------------- header -------------------------------------------------------->
+        <div class="main">
+            <div class="main-container">
+                <div class="trending-bar">
+                    <ul class="trend-content">
+                        <li class="trend-label">TRENDING</li>
+                        <li>
+                            <a href="#">CES 2020</a>
+                        </li>
+                        <li><a href="#">AI</a>
+                            </li>
+                        <li><a href="#">Best CPU</a>
+                            </li>
+                        <li><a href="#">Best Phone</a>
+                            </li>
+                        <li><a href="#">Marvel Movies</a>
+                            </li>
+                        <li><a href="#">COVID-19 vaccines</a>
+                            </li>
+                        <li><a href="#">VPN</a>
+                            </li>
+                    </ul>
+                </div>
+                <aside><small> -- You can not use up creativity. The more you use, the more you have. -- Maya Angelou, 2011</small></aside>
+                
+                <div class="postgalle-container">
+                    <div class="col1">
+                        <div class="row">
+                            <div class="row1-item1">
+                                <a href="../post/post.html"><img src="../assets/img/post1-col1.jpg" alt="post1-col1"></a> 
+                                <div class="item-detail">
+                                    <div class="item-type-post">TECH</div>
+                                    <a href="../post/post.html" class="item-link"><h2>What is DEVOPS ?</h2></a> 
+                                    <span class="item-author">AUTHOR 1</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>    
+                            </div>
+                            <div class="row1-item2">
+                                <a href="../post/post.html"><img src="../assets/img/post1-col1.jpg" alt="post1-col1"></a> 
+                                <div class="item-detail">
+                                    <div class="item-type-post">TECH</div>
+                                    <a href="../post/post.html" class="item-link"><h2>What is DEVOPS ?</h2></a> 
+                                    <span class="item-author">AUTHOR 1</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>  
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="row2-col1">
+                                <div class="item-detail">
+                                    <div class="item-type-post">TECH</div>
+                                    <a href="../post/post.html" class="item-link"><h3>What is DEVOPS ?</h3></a> 
+                                    <span class="item-author">AUTHOR 1</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>
+                                <img src="../assets/img/post1-col1.jpg" alt="post1-row2">  
+                            </div>
+                            <div class="row2-col2">
+                                <div class="item-detail">
+                                    <div class="item-type-post">TECH</div>
+                                    <a href="../post/post.html" class="item-link"><h3>What is DEVOPS ?</h3></a> 
+                                    <span class="item-author">AUTHOR 1</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>  
+                                <img src="../assets/img/post1-col1.jpg" alt="post1-row2">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="row3">
+                                <img src="../assets/img/post1-col1.jpg" alt="post1-row2">
+                                <div class="item-detail">
+                                    <div class="item-type-post">TECH</div>
+                                    <a href="../post/post.html" class="item-link"><h3>What is DEVOPS ?</h3></a> 
+                                    <span class="item-author">AUTHOR 1</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div> 
+                            </div>   
+                        </div>
+                        <div class="load-more">                   
+                                <h5>Learn more ...</h5>
+                        </div>
+                    </div>
+                    
+<!-- -------------------------------------------------col2 -------------------------------------------------->
+                    <div class="col2">
+                        <div class="col2-title"><h1>Most Popular</h1></div>
+                        <div class="col2-story">
+                            <div class="story">
+                                <a href="#"><img src="../assets/img/post1.jfif" alt="post1"></a> 
+                                <div class="story-detail">
+                                    <div class="type-post">NEWS</div>
+                                    <a href="#" class="story-link"><h3>COVID-19 vaccines updates</h3></a> 
+                                    <span class="author">AUTHOR 2</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>    
+                            </div>
+                            <div class="story">
+                                <a href="#"><img src="../assets/img/post1.jfif" alt="post1"></a> 
+                                <div class="story-detail">
+                                    <div class="type-post">NEWS</div>
+                                    <a href="#" class="story-link"><h3>COVID-19 vaccines updates</h3></a> 
+                                    <span class="author">AARIAN MARSHALL</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>   
+                            </div>
+                            <div class="story">
+                                <a href="#"><img src="../assets/img/post1.jfif" alt="post1"></a> 
+                                <div class="story-detail">
+                                    <div class="type-post">NEWS</div>
+                                    <a href="#" class="story-link"><h3>COVID-19 vaccines updates</h3></a> 
+                                    <span class="author">AARIAN MARSHALL</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>   
+                            </div>
+                            <div class="story">
+                                <a href="#"><img src="../assets/img/post1.jfif" alt="post1"></a> 
+                                <div class="story-detail">
+                                    <div class="type-post">NEWS</div>
+                                    <a href="#" class="story-link"><h3>COVID-19 vaccines updates</h3></a> 
+                                    <span class="author">AARIAN MARSHALL</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>   
+                            </div>
+                            <div class="story-last">
+                                <a href="#"><img src="../assets/img/post1.jfif" alt="post1"></a> 
+                                <div class="story-detail">
+                                    <div class="type-post">NEWS</div>
+                                    <a href="#" class="story-link"><h3>COVID-19 vaccines updates</h3></a> 
+                                    <span class="author">AARIAN MARSHALL</span><br>
+                                    <span class="item-author">25 March, 2021</span>
+                                </div>   
+                            </div>
+                        </div>
+                        <a href="../search/search.html" class="col2-link"><img src="../assets/img/iconfinder_arrow_right_1814085.png" alt="arrow-right"><h5>Search for more ...</h5></a>   
+                    </div>
+                </div>
+            </div>
+        </div>
+<!------------------------------------------------- footer -------------------------------------------------->
+    <div class="foot">
+        <div class="foot-container">
+            <div class="share-group">
+                <a href="#"><i class="icon icon-facebook"></i></a>
+                <a href="#"><i class="icon icon-youtube"></i></a>
+                <a href="#"><i class="icon icon-insta"></i></a>
+                <a href="#"><i class="icon icon-drive"></i></a>
+                <a href="#"><i class="icon icon-telegram"></i></a>
+            </div>
+            <div class="about-us"> Trang cập nhật và chia sẻ thông tin khoa học và công nghệ</div>
+            <div class="contact">Email: epu@gmail.com</div>
+        </div>
+    </div>
+        <script src="../assets/js/main.js"></script>
+</body>
+</html>

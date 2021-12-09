@@ -1,0 +1,37 @@
+.main-post {
+  width: 1185px;
+  margin: 100px 0px 8px 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.post-content {
+  background-color: white;
+  box-shadow: 0px 2px 1px 2px #e7dcdc;
+  border-top: 5px solid black;
+}
+
+.post-author {
+  background-color: white;
+  box-shadow: 0px 2px 1px 2px #e7dcdc;
+  border-top: 50px solid black;
+}
+
+.author-image img {
+  background-color: white;
+  border: 2px solid #1572fd;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  top: -40px;
+  position: relative;
+}
+
+#post-info {
+  position: fixed;
+  z-index: 40;
+  left: 20px;
+  top: 20%;
+}

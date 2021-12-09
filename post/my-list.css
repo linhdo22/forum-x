@@ -1,0 +1,21 @@
+#post-list {
+}
+.post {
+  cursor: pointer;
+  background-color: white;
+}
+
+
+.post.public {
+  box-shadow: inset 10px 0px #198754;
+}
+.post.public:hover {
+  box-shadow: inset 10px 0px #198754, inset 0 4px #198754;
+}
+
+.post.private {
+  box-shadow: inset 10px 0px #6c757d;
+}
+.post.private:hover {
+  box-shadow: inset 10px 0px #6c757d, inset 0 4px #6c757d;
+}

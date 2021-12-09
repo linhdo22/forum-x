@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?w4kfb3');
+  src:  url('fonts/icomoon.eot?w4kfb3#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?w4kfb3') format('truetype'),
+    url('fonts/icomoon.woff?w4kfb3') format('woff'),
+    url('fonts/icomoon.svg?w4kfb3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home3:before {
+  content: "\e902";
+}
+.icon-file-text2:before {
+  content: "\e926";
+}
+.icon-price-tag:before {
+  content: "\e935";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-bubble2:before {
+  content: "\e96e";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-power-cord:before {
+  content: "\e9b7";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-mail2:before {
+  content: "\ea84";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-telegram:before {
+  content: "\ea95";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-rss:before {
+  content: "\ea9b";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-steam2:before {
+  content: "\eaad";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+.icon-stackoverflow:before {
+  content: "\ead0";
+}

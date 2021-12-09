@@ -1,0 +1,85 @@
+.footer {
+  background-color: #4e4e4e;
+  padding: 10px 0;
+  color: white;
+}
+.footercContainer {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+/*left*/
+.ContactItem {
+  display: flex;
+  align-items: flex-end;
+  padding: 5px;
+}
+.ContactItem .iconFooter {
+  align-self: center;
+  margin-right: 10px;
+}
+.footAddress p {
+  padding: 5px 0;
+}
+.ContactItem > i {
+  margin-right: 10px;
+}
+
+/*right*/
+.footShare {
+  padding: 5px;
+}
+.footAbout p:nth-of-type(1) {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.footLink {
+  margin-top: 10px;
+}
+.footLink li {
+  display: inline-block;
+}
+.footLink li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* icon  */
+.icon {
+  display: inline-block;
+  font-family: icon;
+  font-style: normal;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.icon-facebook {
+  color: white;
+}
+.icon-facebook::after {
+  content: "\ea91";
+}
+.icon-twitter::after {
+  content: "\ea96";
+}
+.icon-telegram::after {
+  content: "\ea95";
+}
+.icon-steam::after {
+  content: "\eaad";
+}
+.icon-phone::after {
+  content: "\e942";
+  font-size: 20px;
+}
+.icon-address::after {
+  content: "\e902";
+}
+.icon-mail::after {
+  content: "\ea84";
+  font-size: 20px;
+}
+@font-face {
+  font-family: icon;
+  src: url(../../icomoon-v1.0/fonts/icomoon.ttf) format("truetype");
+}

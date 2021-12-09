@@ -1,0 +1,70 @@
+.main-post {
+  margin: 80px 0px;
+}
+
+/* icon */
+.icon {
+  display: block;
+  font-family: icon;
+  font-size: 25px;
+  font-style: normal;
+}
+.icon-share {
+  display: block;
+  font-family: icon;
+  font-size: 35px;
+  font-style: normal;
+}
+@font-face {
+  font-family: icon;
+  src: url(../icomoon-v1.0/fonts/icomoon.ttf) format("truetype");
+}
+
+/* col2 */
+.create-post-content {
+  min-height: 700px;
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 1px 2px var(--stick-color);
+  border-top: 5px solid var(--black-color);
+}
+.create-post-content img {
+  width: 768px;
+  height: auto;
+}
+
+h4 {
+  margin: 8px 0px;
+  padding-top: 8px;
+  border-top: 1px solid var(--stick-color);
+}
+.post-detail {
+  padding: 16px;
+}
+
+/* col3 */
+.post-author {
+  width: 300px;
+  height: 500px;
+  margin: 0px 16px 16px 0px;
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 1px 2px var(--stick-color);
+  border-top: 5px solid var(--black-color);
+}
+.author-tittle {
+  background-color: var(--black-color);
+  width: 100%;
+  height: 100px;
+}
+.post-author img {
+  position: relative;
+  height: 125px;
+  width: 125px;
+  top: -13%;
+  left: 30%;
+}
+.author-detail {
+  margin: 0;
+  position: relative;
+  top: -15%;
+  padding: 16px;
+}

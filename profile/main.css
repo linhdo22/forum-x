@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #eef0f1;
+}
+
+.custom-container {
+  background-color: #eef0f1;
+  width: 1200px;
+  padding: 20px 10px;
+  display: grid;
+  margin: 100px auto 0;
+  min-height: 700px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+/* upper  */
+.upperInfo {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  border: solid 1px #ccc;
+}
+.userAva {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -100px;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+  padding: 20px 10px 10px;
+}
+.userAva img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: solid 5px #1572fd;
+  box-shadow: 0px 0px 20px grey;
+  background-color: white;
+}
+.subcribtion {
+  padding: 250px 0px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subcribtion > div {
+  margin: 10px 20px;
+}
+.subcribtion .subText {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.subcribtion .subNumber i {
+  position: relative;
+  top: 1px;
+  color: #0066ff;
+  font-size: 1.5em;
+}
+.subcribtion .subButtonCb {
+  display: none;
+}
+.subcribtion .subButton label {
+  color: #0066ff;
+  border: dashed 2px #0066ff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+}
+.subcribtion .subButtonCb:checked + label {
+  color: white;
+  background-color: #0066ff;
+}
+
+/*below*/
+.userDescription {
+  border-radius: 20px 20px 0 0;
+}
+
+.userinfo {
+  font-size: 20px;
+}
+.userinfo .pieceOfInfo {
+  margin: 1.2em 0;
+  color: #4d4d4d;
+}
+.userinfo .pieceOfInfo .info {
+  color: black;
+}
+
+.postheader {
+  /* background-color: #f83434; */
+  background-color: white;
+  padding: 5px 5px;
+  width: 100%;
+  height: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 5px gray;
+  border-radius: 10px;
+}
+.postheader .sort {
+  margin-left: 20px;
+  display: flex;
+}
+.postheader .sort .sortType {
+  /* color:white; */
+  cursor: pointer;
+  user-select: none;
+  text-align: right;
+  padding-right: 8px;
+  min-width: 70px;
+}
+.postheader .sort .sortType + .sortType {
+  border-left: solid 1.5px black;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.listpost {
+  margin: 30px 0px 0;
+}
+.postcontainer {
+  position: relative;
+  box-shadow: 0 1px 5px 0px gray;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  border-top: solid 7px black;
+  padding: 20px 30px;
+  transition: left 0.3s;
+  left: 0;
+  cursor: pointer;
+}
+.postcontainer:hover {
+  left: 7px;
+  box-shadow: 0px 1px 10px 0px gray;
+}
+.postcontainer + .postcontainer {
+  margin-top: 20px;
+}
+.postdescription::after {
+  content: "...";
+}
+.postcontainer .postimg {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.postcontainer .postimg img {
+  height: 250px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 5px 0px #9e9b9b;
+  border-radius: 5px;
+}
+
+/* icon  */
+.icon {
+  display: inline-block;
+  font-family: icon;
+  font-style: normal;
+  font-size: 25px;
+}
+.icon-wifi::after {
+  content: "\ea9b";
+}
+.icon-location::after {
+  content: "\e947";
+}
+.icon-youtube::after {
+  content: "\ea9d";
+}
+.icon-github::after {
+  content: "\eab0";
+}
+.icon-stackoverflow::after {
+  content: "\ead0";
+}
+.icon-linkedin::after {
+  content: "\eac9";
+}
+.icon-powerplug::after {
+  content: "\e9b7";
+}
+.icon-post::after {
+  content: "\e926";
+}
+.icon-comment::after {
+  content: "\e96e";
+}
+
+@font-face {
+  font-family: icon;
+  src: url(../icomoon-v1.0/fonts/icomoon.ttf) format("truetype");
+}
