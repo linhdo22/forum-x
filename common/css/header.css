@@ -1,48 +1,27 @@
+img {
+  object-fit: cover;
+  object-position: center;
+  background-color: white;
+}
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
 .header {
   background-color: white;
   width: 100%;
-  height: 4em;
+  height: 4rem;
   text-align: center;
   box-shadow: 5px 0 5px black;
   position: relative;
   background-image: url(../../assets/img/headerBG.jpg);
   z-index: 10;
 }
-a {
-  text-decoration: none !important;
-  color: inherit !important;
-}
-a:hover {
-  color: inherit !important;
-}
-.nav {
-  height: 4em;
-  width: 1200px;
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-}
-.navLeft {
-  margin: 0;
-  display: flex;
-  align-items: flex-start;
-  font-weight: 600;
-}
-.navLeft > div {
-  cursor: pointer;
-}
-.navLeft > div + div {
-  margin-left: 50px;
-}
-.navLeftHome {
-  font-size: 2em;
-}
+
 .greeting {
-  margin-top: 20px;
   color: #9b9494;
   border-right: solid 2px #dee2e4;
   border-left: solid 2px #dee2e4;
-  padding: 0 20px;
 }
 
 .navLeft .navLeftHome img {
@@ -57,38 +36,16 @@ a:hover {
   width: 16px;
   height: 16px;
 }
-.navLeftTrending,
-.navLeftAbout {
-  padding-top: 20px;
-}
+
 .navLeftTrending:hover,
 .navLeftAbout:hover {
   border-bottom: solid 3px black;
 }
-.navLeftTrending a,
-.navLeftAbout a {
-  text-decoration: none;
-  color: black;
-}
 
-.navRight {
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-.navRight > div:nth-child(2) {
-  padding: 20px 20px;
-  margin: -5px 10px 0;
-  cursor: pointer;
-}
-.navMenu {
-  position: relative;
-}
 .navSearch {
   display: flex;
   width: 300px;
   justify-content: flex-end;
-  align-items: center;
 }
 .navSearchHeader {
   order: 1;
@@ -120,10 +77,12 @@ a:hover {
 
 .navMenuHeader.ext {
   color: #64a7ff;
+  padding-bottom: 20px;
+  background-color: red;
 }
 .navMenuContent {
   position: absolute;
-  top: 70px;
+  top: 60px;
   right: 0px;
   background-color: white;
   box-shadow: 0 0 5px gray;
@@ -140,12 +99,9 @@ a:hover {
 .navMenuOptions > span + div {
   margin-top: 10px;
 }
-.navMenuOptions > div {
-  padding: 10px 10px;
-  margin: 0 10px;
-  border-radius: 10px;
-}
 .optionHeader {
+  border-radius: 10px;
+  padding: 5px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -162,13 +118,16 @@ a:hover {
   margin-right: 20px;
 }
 .optionHeaderImg {
-  height: 100%;
-  width: 100%;
+  height: 100px;
+  width: 100px;
   z-index: -1;
 }
 
 .navMenuOptions .options {
   cursor: pointer;
+  padding: 10px 10px;
+  margin: 0 10px;
+  border-radius: 10px;
 }
 .navMenuOptions .options:hover {
   background-color: #cccccc;
@@ -185,28 +144,6 @@ a:hover {
   border-bottom: solid 1px gray;
 }
 /*unlogin nav menu option*/
-.loginNavMenuOptions {
-  text-align: center;
-}
-.loginOption {
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-}
-.loginOption.reg {
-  background-color: #4c4cdc;
-}
-.loginOption.log:hover {
-  background-color: #ccc;
-}
-.loginOption.log a {
-  text-decoration: none;
-  color: black;
-}
-.loginOption.reg a {
-  text-decoration: none;
-  color: white;
-}
 
 /*icon*/
 .icon {

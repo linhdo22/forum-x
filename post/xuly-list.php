@@ -5,6 +5,7 @@ if (isset($_POST['authorId'])) {
     $data = array();
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            $tags = getTags($row['post_id']);
             $data[] = array(
                 'post_id' => $row['post_id'],
                 'title' => $row['title'],
@@ -13,6 +14,7 @@ if (isset($_POST['authorId'])) {
                 'public' => $row['public'],
                 'view' => $row['view'],
                 'vote' => $row['vote'],
+                'tags' => $tags,
             );
         }
     }

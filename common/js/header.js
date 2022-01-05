@@ -25,18 +25,7 @@ window.addEventListener("load", () => {
   //clock
   setInterval(time, 1000);
 
-  //dropdown menu
-  const navMenu = document.getElementsByClassName("navMenu")[0];
-  const navMenuHeader = document.getElementsByClassName("navMenuHeader")[0];
-  const navMenuContent = document.getElementsByClassName("navMenuContent")[0];
-  navMenu.addEventListener("mouseover", () => {
-    navMenuContent.style.display = "block";
-    navMenuHeader.classList.add("ext");
-  });
-  navMenu.addEventListener("mouseout", () => {
-    navMenuContent.style.display = "none";
-    navMenuHeader.classList.remove("ext");
-  });
+
   //search
   const searchForm = document.getElementsByClassName("searchForm")[0];
   const navSearchHeader = document.getElementsByClassName("navSearchHeader")[0];

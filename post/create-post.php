@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +17,8 @@
 </head>
 
 <body>
-    <?php require '../common/header.php'; ?>
     <?php require './xuly-create-post.php' ?>
+    <?php require '../common/header.php'; ?>
 
     <!------------------------------------------- col2 ------------------------------------------------------>
 
@@ -34,9 +39,43 @@
                     <textarea id='textarea' style="height:100%" name='textarea'>Next, use our Get Started docs to setup Tiny!</textarea>
                 </div>
                 <div class="col-md-3 offset-md-1 ">
-                    <div class="border shadow  p-4">
-                        <button id="create-btn" type="submit" name='create-post' class="w-100 btn btn-outline-primary">Create post</button>
+                    <div class="border shadow-sm  p-4 mb-3">
+                        <button id="create-btn" type="submit" name='create-post' class="w-100 btn btn-success">Create post</button>
                     </div>
+                    <div class="border shadow-sm  p-4">
+                        <p class="text-center fw-bold fs-5">Post tag </p>
+                        <div>
+                            <div class="my-2">
+                                <input id="art-tag" type="checkbox" name="tags[]" value="art" class="btn-check">
+                                <label for="art-tag" class="btn btn-outline-primary rounded-pill">#Art</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="biology-tag" type="checkbox" name="tags[]" value="biology" class="btn-check">
+                                <label for="biology-tag" class="btn btn-outline-primary rounded-pill">#Biology</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="mechanic-tag" type="checkbox" name="tags[]" value="mechanic" class="btn-check">
+                                <label for="mechanic-tag" class="btn btn-outline-primary rounded-pill">#Mechanic</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="news-tag" type="checkbox" name="tags[]" value="news" class="btn-check">
+                                <label for="news-tag" class="btn btn-outline-primary rounded-pill">#News</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="science-tag" type="checkbox" name="tags[]" value="science" class="btn-check">
+                                <label for="science-tag" class="btn btn-outline-primary rounded-pill">#Science</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="social-tag" type="checkbox" name="tags[]" value="social" class="btn-check">
+                                <label for="social-tag" class="btn btn-outline-primary rounded-pill">#Social</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="tech-tag" type="checkbox" name="tags[]" value="tech" class="btn-check">
+                                <label for="tech-tag" class="btn btn-outline-primary rounded-pill">#Tech</label>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </form>

@@ -1,208 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ranking</title>
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/post.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/js/main.js">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/ranking.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/post.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/js/main.js" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="./ranking.css" />
+  </head>
+  <body>
     <div class="head">
-        <div class="head-container">
-            <div class="head-btngroup">
-                <a href="../login/login.html" class="btn btn-login">Login</a>
-                <div class="btn btn-register" id="register">Register</div>
-            </div>
-            <div class="head-brand">
-                <a href="../home/home.html">
-                    <img src="../assets/img/iconfinder_m-16_4230548.png" alt="icon-brand" id="brand">
-                </a>
-            </div>
-            <input type="text" name="search" id="search-bar" placeholder="Nhap tu khoa de tim kiem .." onblur="handleronblur()">
-            <img src="../assets/img/iconfinder_search_5402443.png" alt="icon-search" id="icon-search">
-            <div class="greeting" id="greeting"></div>
-            <div class="nav-bar">
-                <a href="../ranking/ranking.html" class="btn-ranking">TOP <img src="../assets/img/iconfinder_Business_and_Finance_finance_pyramid_6588675.png" alt="arrow-up"></a>
-                <a href="../aboutus/aboutus.html" class="btn-aboutus">About us <img src="../assets/img/iconfinder_about-info-information_2931180.png" alt="info"></a>
-            </div>
+      <div class="head-container">
+        <div class="head-btngroup">
+          <a href="../login/login.html" class="btn btn-login">Login</a>
+          <div class="btn btn-register" id="register">Register</div>
         </div>
+        <div class="head-brand">
+          <a href="../home/home.html">
+            <img
+              src="../assets/img/iconfinder_m-16_4230548.png"
+              alt="icon-brand"
+              id="brand"
+            />
+          </a>
+        </div>
+        <input
+          type="text"
+          name="search"
+          id="search-bar"
+          placeholder="Nhap tu khoa de tim kiem .."
+          onblur="handleronblur()"
+        />
+        <img
+          src="../assets/img/iconfinder_search_5402443.png"
+          alt="icon-search"
+          id="icon-search"
+        />
+        <div class="greeting" id="greeting"></div>
+        <div class="nav-bar">
+          <a href="../ranking/ranking.html" class="btn-ranking"
+            >TOP
+            <img
+              src="../assets/img/iconfinder_Business_and_Finance_finance_pyramid_6588675.png"
+              alt="arrow-up"
+          /></a>
+          <a href="../aboutus/aboutus.html" class="btn-aboutus"
+            >About us
+            <img
+              src="../assets/img/iconfinder_about-info-information_2931180.png"
+              alt="info"
+          /></a>
+        </div>
+      </div>
     </div>
     <div class="register-drop" id="header-drop">
-        <div class="drop-content">
-            <a href="javascript:void(0)" class="close-btn" onclick="closedrop()">&times;</a>
-            <div class="drop-content-container">
-                <input type="email" id="email" placeholder="Enter your email..">
-                <button class="btn btn-join">Join us</button>
-            </div>
-            <div class="greeting-drop">
-                For more information about TECH, LIFE, SCIENCE, ...
-            </div>
+      <div class="drop-content">
+        <a href="javascript:void(0)" class="close-btn" onclick="closedrop()"
+          >&times;</a
+        >
+        <div class="drop-content-container">
+          <input type="email" id="email" placeholder="Enter your email.." />
+          <button class="btn btn-join">Join us</button>
         </div>
+        <div class="greeting-drop">
+          For more information about TECH, LIFE, SCIENCE, ...
+        </div>
+      </div>
     </div>
- <!--------------------------------------- header ----------------------------------------------------->
+    <!--------------------------------------- header ----------------------------------------------------->
     <div class="main-content">
-        <div class="rank-container">
-<!----------------------------------------------------- col1 ---------------------------------------------->
-            <div class="col-base">
-                <div class="tittle">
-                    <h3>Top daily</h3>
-                </div>
-                <div class="table-order">
-                    <div class="order-number">#1</div>
-                    <div class="order-content">
-                        <a href="../post/post.html" class="order-name">What is DevOps?</a><br>
-                        <a href="#" class="order-detail">AUTHOR1</a><br>
-                        <a href="#" class="order-date">Mar 8, 2021</a>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number">#2</div>
-                    <div class="order-content">
-                        <a href="#" class="order-name">How to use CSS3</a><br>
-                        <a href="#" class="order-detail">AUTHOR2</a><br>
-                        <a href="#" class="order-date">Mar 8, 2021</a>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number">#3</div>
-                    <div class="order-content">
-                        <a href="#" class="order-name">HTML5 ?</a><br>
-                        <a href="#" class="order-detail">AUTHOR3</a><br>
-                        <a href="#" class="order-date">Mar 8, 2021</a>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number">#4</div>
-                    <div class="order-content">
-                        <a href="#" class="order-name">javascript !!</a><br>
-                        <a href="#" class="order-detail">AUTHOR4</a><br>
-                        <a href="#" class="order-date">Mar 8, 2021</a>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number">#5</div>
-                    <div class="order-content">
-                        <a href="#" class="order-name">What is Git?</a><br>
-                        <a href="#" class="order-detail">AUTHOR5</a><br>
-                        <a href="#" class="order-date">Mar 8, 2021</a>   
-                    </div>
-                </div>
+      <div class="rank-container">
+        <!----------------------------------------------------- col1 ---------------------------------------------->
+        <div class="col-base">
+          <div class="tittle">
+            <h3>Top daily</h3>
+          </div>
+          <div class="table-order">
+            <div class="order-number">#1</div>
+            <div class="order-content">
+              <a href="../post/post.html" class="order-name">What is DevOps?</a
+              ><br />
+              <a href="#" class="order-detail">AUTHOR1</a><br />
+              <a href="#" class="order-date">Mar 8, 2021</a>
             </div>
-<!----------------------------------------------- col2 ----------------------------------------------------->
-            <div class="col-base1">
-                <div class="tittle1">
-                    <h3>Top authors</h3>
-                </div>
-                <div class="table-order">
-                    <div class="order-number1">#1</div>
-                    <div class="order-content">
-                        <div class="order-name">AUTHOR1</div>
-                        <div class="order-detail">Somewhere</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number1">#2</div>
-                    <div class="order-content">
-                        <div class="order-name">AUTHOR2</div>
-                        <div class="order-detail">Somewhere</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number1">#3</div>
-                    <div class="order-content">
-                        <div class="order-name">AUTHOR3</div>
-                        <div class="order-detail">Somewhere</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number1">#4</div>
-                    <div class="order-content">
-                        <div class="order-name">AUTHOR4</div>
-                        <div class="order-detail">Somewhere</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number1">#5</div>
-                    <div class="order-content">
-                        <div class="order-name">AUTHOR5</div>
-                        <div class="order-detail">Somewhere</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number">#2</div>
+            <div class="order-content">
+              <a href="#" class="order-name">How to use CSS3</a><br />
+              <a href="#" class="order-detail">AUTHOR2</a><br />
+              <a href="#" class="order-date">Mar 8, 2021</a>
             </div>
-<!----------------------------------------------- col3 ----------------------------------------------------->
-            <div class="col-base2">
-                <div class="tittle2"> 
-                    <h3>Most liked</h3>
-                </div>
-                <div class="table-order">
-                    <div class="order-number2">#1</div>
-                    <div class="order-content">
-                        <div class="order-name">What is DevOps?</div>
-                        <div class="order-detail">AUTHOR1</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number2">#2</div>
-                    <div class="order-content">
-                        <div class="order-name">What is DevOps?</div>
-                        <div class="order-detail">AUTHOR1</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number2">#3</div>
-                    <div class="order-content">
-                        <div class="order-name">What is DevOps?</div>
-                        <div class="order-detail">AUTHOR1</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number2">#4</div>
-                    <div class="order-content">
-                        <div class="order-name">What is DevOps?</div>
-                        <div class="order-detail">AUTHOR1</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
-                <div class="table-order">
-                    <div class="order-number2">#5</div>
-                    <div class="order-content">
-                        <div class="order-name">What is DevOps?</div>
-                        <div class="order-detail">AUTHOR1</div>
-                        <div class="order-date">Mar 8, 2021</div>   
-                    </div>
-                </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number">#3</div>
+            <div class="order-content">
+              <a href="#" class="order-name">HTML5 ?</a><br />
+              <a href="#" class="order-detail">AUTHOR3</a><br />
+              <a href="#" class="order-date">Mar 8, 2021</a>
             </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number">#4</div>
+            <div class="order-content">
+              <a href="#" class="order-name">javascript !!</a><br />
+              <a href="#" class="order-detail">AUTHOR4</a><br />
+              <a href="#" class="order-date">Mar 8, 2021</a>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number">#5</div>
+            <div class="order-content">
+              <a href="#" class="order-name">What is Git?</a><br />
+              <a href="#" class="order-detail">AUTHOR5</a><br />
+              <a href="#" class="order-date">Mar 8, 2021</a>
+            </div>
+          </div>
         </div>
+        <!----------------------------------------------- col2 ----------------------------------------------------->
+        <div class="col-base1">
+          <div class="tittle1">
+            <h3>Top authors</h3>
+          </div>
+          <div class="table-order">
+            <div class="order-number1">#1</div>
+            <div class="order-content">
+              <div class="order-name">AUTHOR1</div>
+              <div class="order-detail">Somewhere</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number1">#2</div>
+            <div class="order-content">
+              <div class="order-name">AUTHOR2</div>
+              <div class="order-detail">Somewhere</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number1">#3</div>
+            <div class="order-content">
+              <div class="order-name">AUTHOR3</div>
+              <div class="order-detail">Somewhere</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number1">#4</div>
+            <div class="order-content">
+              <div class="order-name">AUTHOR4</div>
+              <div class="order-detail">Somewhere</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number1">#5</div>
+            <div class="order-content">
+              <div class="order-name">AUTHOR5</div>
+              <div class="order-detail">Somewhere</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------- col3 ----------------------------------------------------->
+        <div class="col-base2">
+          <div class="tittle2">
+            <h3>Most liked</h3>
+          </div>
+          <div class="table-order">
+            <div class="order-number2">#1</div>
+            <div class="order-content">
+              <div class="order-name">What is DevOps?</div>
+              <div class="order-detail">AUTHOR1</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number2">#2</div>
+            <div class="order-content">
+              <div class="order-name">What is DevOps?</div>
+              <div class="order-detail">AUTHOR1</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number2">#3</div>
+            <div class="order-content">
+              <div class="order-name">What is DevOps?</div>
+              <div class="order-detail">AUTHOR1</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number2">#4</div>
+            <div class="order-content">
+              <div class="order-name">What is DevOps?</div>
+              <div class="order-detail">AUTHOR1</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+          <div class="table-order">
+            <div class="order-number2">#5</div>
+            <div class="order-content">
+              <div class="order-name">What is DevOps?</div>
+              <div class="order-detail">AUTHOR1</div>
+              <div class="order-date">Mar 8, 2021</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-<!--------------------------------------------- footer ------------------------------------------------------>
+    <!--------------------------------------------- footer ------------------------------------------------------>
     <div class="foot">
-        <div class="foot-container">
-            <div class="share-group">
-                <a href="#"><i class="icon icon-facebook"></i></a>
-                <a href="#"><i class="icon icon-youtube"></i></a>
-                <a href="#"><i class="icon icon-insta"></i></a>
-                <a href="#"><i class="icon icon-drive"></i></a>
-                <a href="#"><i class="icon icon-telegram"></i></a>
-            </div>
-            <div class="about-us"> Trang cập nhật và chia sẻ thông tin khoa học và công nghệ</div>
-            <div class="contact">Email: epu@gmail.com</div>
+      <div class="foot-container">
+        <div class="share-group">
+          <a href="#"><i class="icon icon-facebook"></i></a>
+          <a href="#"><i class="icon icon-youtube"></i></a>
+          <a href="#"><i class="icon icon-insta"></i></a>
+          <a href="#"><i class="icon icon-drive"></i></a>
+          <a href="#"><i class="icon icon-telegram"></i></a>
         </div>
+        <div class="about-us">
+          Trang cập nhật và chia sẻ thông tin khoa học và công nghệ
+        </div>
+        <div class="contact">Email: epu@gmail.com</div>
+      </div>
     </div>
     <script src="../assets/js/main.js"></script>
-</body>
+  </body>
 </html>

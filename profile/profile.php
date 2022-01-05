@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="profile.css">
     <link rel='stylesheet' type='text/css' href='../common/css/header.css'>
-    <link rel="stylesheet" href="../assets/fontawesome-free-5.15.4-web/css/all.min.css">
     <script src="main.js"></script>
     <title>Profile</title>
 </head>
 
 <body style="background-color: #eef0f1;">
-    <?php require '../common/header.php'; ?>
-    <?php require '../controller/member.php'; ?>
     <?php
+    require '../controller/member.php';
     if (!isset($_GET['profile'])) {
         header("Location: ../home/home.php");
     }
     $profile = getProfile($_GET['profile']);
-    var_dump($profile);
+    require '../common/header.php';
     ?>
 
 
@@ -26,7 +29,7 @@
         <div class="row mb-5">
             <div class="upperInfo col-12">
                 <div class="userAva">
-                    <img src="../assets/img/5740bb4e1da387df4d92a09475c9b049.png" alt="loi">
+                    <img src="../<?php echo $profile['avatar']; ?>">
                 </div>
                 <div class="subcribtion">
                     <div class="subNumber">
@@ -34,7 +37,11 @@
                         <span class="subText"><?php echo $profile['subcribe_count']; ?></span>
                     </div>
                     <div class="subButton">
-                        <input type="checkbox" id="subButtonCb" checked class="subButtonCb">
+                        <input type="checkbox" id="subButtonCb" <?php if (isset($_SESSION['user'])) {
+                                                                    if (checkSubcribe($_GET['profile'], $_SESSION['user']['member_id']) == 1) {
+                                                                        echo "checked";
+                                                                    }
+                                                                } ?> class="subButtonCb">
                         <label for="subButtonCb">Subcribe</label>
                     </div>
                 </div>
@@ -50,28 +57,30 @@
                         <div class="d-flex justify-content-center mb-3">
                             <?php
                             if ($profile['place']) {
-                                echo '<div><i class="fas fa-map-marker"></i> ' . $profile['place'] . '</div>';
+                                echo '<div class="me-4"><i class="fas fa-map-marker"></i> ' . $profile['place'] . '</div>';
                             }
                             if ($profile['joinDate']) {
                                 $jDate = date_create($profile['joinDate']);
-                                echo '<div><i class="fas fa-plug"></i> Joined on ' . date_format($jDate, 'F j, Y') . '</div>';
+                                echo '<div ><i class="fas fa-plug"></i> Joined on ' . date_format($jDate, 'F j, Y') . '</div>';
                             }
                             ?>
                         </div>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-around">
                             <?php
                             if ($profile['contacts']) {
                                 $countContacts = count($profile['contacts']);
-                                for ($i = 0; $i < $profile['contacts']; $i++) {
-                                    echo '<a href="' . $profile['contacts'][$i]['value'] . '"><i class="fab fa-' . $profile['contacts'][$i]['type'] . '"></i></a>';
+                                for ($i = 0; $i < $countContacts; $i++) {
+                                    if ($profile['contacts'][$i]['public'] == 1) {
+                                        echo '<a href="' . $profile['contacts'][$i]['value'] . '"><i class="fab fa-' . $profile['contacts'][$i]['type'] . ' fs-4"></i></a>';
+                                    }
                                 }
                             }
                             ?>
 
-                            <!-- <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-stack-overflow"></i></a> -->
+                            <!-- <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-stack-overflow"></i></a> -->
                         </div>
                     </div>
                 </div>
@@ -83,13 +92,13 @@
                     <?php
                     if ($profile['job']) {
                         echo '<div class="my-1">
-                    <span class="fw-bold">Job:</span> student ' . $profile['job'] . '
+                    <span class="fw-bold">Job:</span>' . $profile['job'] . '
                     </div>';
                     }
                     if ($profile['dateOfBirth']) {
                         $dob = date_create($profile['dateOfBirth']);
                         echo '<div class="my-1">
-                        <span class="fw-bold">Job:</span> Year born ' . date_format($dob, 'Y') . '
+                        <span class="fw-bold">Year born:</span> ' . date_format($dob, 'Y') . '
                         </div>';
                     }
                     ?>
@@ -102,10 +111,28 @@
                         <i class="far fa-comment-dots fs-5 me-1"></i><?php echo getUserAllCommentsCount($_GET['profile']); ?> comments written
                     </div>
                 </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary w-100 mx-auto mt-3" data-bs-toggle="modal" data-bs-target="#donate-modal">
+                    <i class="fas fa-hand-holding-usd"></i> Support through VNPAY
+                </button>
+
+                <div class="modal fade" id="donate-modal" tabindex="-1">
+                    <div class="modal-dialog  modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Donate to <?php echo $profile['name']; ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <?php require './payment-form.php' ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-9">
                 <div class="postheader">
-                    <div class="sort">
+                    <!-- <div class="sort">
                         <div class="sorticon"></div>
                         <div href="" id='sortNewest' class="sortType">
                             <i class="sortIcon "></i>
@@ -119,27 +146,10 @@
                             <i class="sortIcon"></i>
                             View
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="listpost">
-                    <!--  -->
-                    <!-- <div class="postcontainer">
-                        <a href="">
-                            <div class="fs-2 fw-bold">title</div>
-                            <p class="postdescription">preContent</p>
-                            <div class="postimg">
-                                <img src="../${v.preImg}" alt="">
-                            </div>
-                        </a>
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <span class='mx-2'>View: ${v.view}</span>
-                                <span class='mx-2'>Vote: ${v.vote}</span>
-                            </div>
-                            <span class="fst-italic text-secondary">${updatedTime}</span>
-                        </div>
-                    </div> -->
-                    <!--  -->
+                    <!-- code js  -->
                 </div>
             </div>
         </div>

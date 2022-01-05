@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/fontawesome-free-5.15.4-web/css/all.min.css">
     <title>POST</title>
     <link rel="stylesheet" href="../common/css/base.css">
     <link rel="stylesheet" href="./post.css">
@@ -14,9 +18,8 @@
 </head>
 
 <body>
-    <?php require '../common/header.php'; ?>
-    <?php require '../controller/post.php'; ?>
     <?php
+    require '../controller/post.php';
     if (!isset($_GET['id'])) {
         header('Location: ../home/home.php');
     }
@@ -26,6 +29,7 @@
     }
     $authorId = $post['author'];
     echo "<script> window.authorId = $authorId </script>";
+    require '../common/header.php';
     ?>
 
 
@@ -100,29 +104,37 @@
                 <div class="post-author p-2">
                     <a href="../profile/profile.php?profile=<?php echo $post['author']; ?>">
                         <div class="text-center author-image">
-                            <!-- <img src="../assets/img/iconfinder_batman_hero_avatar_comics_4043232.png" alt="ava-author"> -->
-                            <img src="../assets/img/5740bb4e1da387df4d92a09475c9b049.png" alt="ava-author">
+                            <img src="../<?php echo $post['avatar']; ?>" alt="ava-author">
                         </div>
                     </a>
-                    <h4 class="border-top">Name</h4>
+                    <h4 class="border-top pt-1">Name</h4>
                     <p><?php echo $post['name']; ?></p>
 
                     <?php
                     if ($post['job']) {
-                        echo '<h4 class="border-top">Work</h4>
+                        echo '<h4 class="border-top pt-1">Work</h4>
                         <p>' . $post['job'] . '</p>';
                     }
                     if ($post['place']) {
-                        echo '<h4 class="border-top">Location</h4>
+                        echo '<h4 class="border-top pt-1">Location</h4>
                         <p>' . $post['place'] . '</p>';
                     }
                     if ($post['joinDate']) {
                         $joindate = strtotime($post['joinDate']);
-                        echo '<h4 class="border-top">Joined</h4>
+                        echo '<h4 class="border-top pt-1">Joined</h4>
                         <p>' . date('F j, Y', $joindate) . '</p>';
+                    }
+                    $tags = getTags($post['post_id']);
+                    if (count($tags) > 0) {
+                        echo '<h4 class="border-top pt-1">Tags</h4>';
+
+                        foreach ($tags as $tag) {
+                            echo '<div class="btn btn-outline-primary rounded-pill text-capitalize disabled mx-2 my-1">#' . $tag . '</div>';
+                        }
                     }
 
                     ?>
+
                 </div>
 
             </div>
@@ -137,7 +149,6 @@
     } else {
         $userVote = checkUserVote($post['post_id'], $_SESSION['user']['member_id']);
     }
-    echo $userVote;
     ?>
     <div id="post-info" class="vstack gap-5 text-center">
         <div>

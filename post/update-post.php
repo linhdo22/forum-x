@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +16,8 @@
 </head>
 
 <body>
-    <?php require '../common/header.php'; ?>
-    <?php require '../controller/post.php' ?>
-
     <?php
+    require '../controller/post.php';
     if (!isset($_GET['id'])) {
         header('Location: ../home/home.php');
     }
@@ -24,6 +27,7 @@
     }
     $authorId = $post['author'];
     echo "<script> window.authorId = $authorId </script>";
+    require '../common/header.php';
     ?>
 
     <div class="main-post container">
@@ -44,11 +48,48 @@
                     <textarea id='textarea' style="height:100%" name='content'><?php echo $post['content']; ?></textarea>
                 </div>
                 <div class="col-md-3 offset-md-1 ">
-                    <div class="border shadow  p-4">
+                    <div class="border shadow-sm  p-4 mb-3">
                         <button id="create-btn" type="submit" name='update-post' class="w-100 btn btn-outline-primary mb-4">Update post</button>
-                        <button id="create-btn" onclick="window.location.reload()" class="w-100 btn btn-outline-secondary">Discard change</button>
+                        <div onclick="window.location.reload()" class="w-100 btn btn-outline-secondary">Discard change</div>
+                    </div>
+                    <div class="border shadow-sm  p-4">
+                        <?php
+                        $tags = getTags($post['post_id']);
+                        ?>
+                        <p class="text-center fw-bold fs-5">Post tag </p>
+                        <div>
+                            <div class="my-2">
+                                <input id="art-tag" type="checkbox" name="tags[]" value="art" <?php if (in_array("art", $tags)) echo 'checked'; ?> class="btn-check">
+                                <label for="art-tag" class="btn btn-outline-primary rounded-pill">#Art</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="biology-tag" type="checkbox" name="tags[]" value="biology" <?php if (in_array("biology", $tags)) echo 'checked'; ?> class="btn-check">
+                                <label for="biology-tag" class="btn btn-outline-primary rounded-pill">#Biology</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="mechanic-tag" type="checkbox" name="tags[]" value="mechanic" <?php if (in_array("mechanic", $tags)) echo 'checked'; ?> class="btn-check">
+                                <label for="mechanic-tag" class="btn btn-outline-primary rounded-pill">#Mechanic</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="news-tag" type="checkbox" name="tags[]" value="news" <?php if (in_array("news", $tags)) echo 'checked'; ?> class="btn-check">
+                                <label for="news-tag" class="btn btn-outline-primary rounded-pill">#News</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="science-tag" type="checkbox" name="tags[]" value="science" <?php if (in_array("science", $tags)) echo 'checked'; ?> class="btn-check">
+                                <label for="science-tag" class="btn btn-outline-primary rounded-pill">#Science</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="social-tag" type="checkbox" name="tags[]" value="social" <?php if (in_array("social", $tags)) echo 'checked'; ?> class="btn-check">
+                                <label for="social-tag" class="btn btn-outline-primary rounded-pill">#Social</label>
+                            </div>
+                            <div class="my-2">
+                                <input id="tech-tag" type="checkbox" name="tags[]" value="tech" <?php if (in_array("tech", $tags)) echo 'checked'; ?> class="btn-check">
+                                <label for="tech-tag" class="btn btn-outline-primary rounded-pill">#Tech</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </form>
     </div>

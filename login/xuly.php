@@ -1,11 +1,6 @@
 <?php
-//Khai báo utf-8 để hiển thị được tiếng việt
-header('Content-Type: text/html; charset=UTF-8');
+
 //Xử lý đăng nhập
-if (isset($_GET['logout'])) {
-    unset($_SESSION['user']);
-    header('Location: ./login.php');
-}
 if (isset($_POST['login'])) {
     //Kết nối tới database
     $connect = mysqli_connect('localhost', 'root', 'Vak2272001', 'forum-x') or die('Không thể kết nối tới database');

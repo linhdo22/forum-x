@@ -1,288 +1,253 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-html{
-    font-family:sans-serif ;
+html {
+  font-family: sans-serif;
 }
-.body{
-    background-color: #EEF0F1;
+.body {
+  background-color: #eef0f1;
 }
-.container{
-    width: 1200px;
-    margin:0 auto;
-    padding: 40px 10px;
-    min-height: 600px;
-    /* height temp */
-    display: flex;
+.animation-first {
+  opacity: 0 !important;
+}
+.animation-second {
+  transition: all 0.5s;
+  opacity: 1;
 }
 /* side tag left  */
-.sideTag{
-    width: 30%;
-    /* temp heigh */
-    min-height: 200px;
-    padding:20px 50px;
-    border-right: dotted 2px #cccccc;
+.sideTag {
+  border-right: dotted 2px #cccccc;
 }
-.sideTag .listType{
-    border-bottom: dotted 1px rgb(201, 199, 199);
+.sideTag .listType {
+  border-bottom: dotted 1px rgb(201, 199, 199);
 }
-.sideTag ul{
-    margin-top:20px;
-    list-style: none;
+.sideTag ul {
+  margin-top: 20px;
+  list-style: none;
 }
-.sideTag li{
-    padding: 10px 20px;
-    margin:10px 0;
-    border-radius: 10px;
-    cursor: pointer;
+.sideTag li {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
 }
-.sideTag li:hover{
-    background-color: #E2E4E6;
+.sideTag li:hover {
+  background-color: #e2e4e6;
 }
-.sideTag li.active{
-    background-color: #686868;
-    font-weight: bold;
-    color: white;
+.sideTag li.active {
+  background-color: #686868;
+  font-weight: bold;
+  color: white;
 }
 
-.filterType{
+.searchBar {
+  position: relative;
 }
-.filterTag{
-    font-size: 15px;
-    font-style: italic;
-}
-.searchContainer{
-    flex-grow: 1;
-    margin-left: 30px;
-    max-width: 796px;
-}
-.searchBar{
-    position: relative;
-}
-.searchBarInput{
-    width: 100%;
-    padding: 10px;
-}
-.searchBarIcon{
-    position: absolute;
-    right:10px;
-    top:5px;
-    cursor: pointer;
-}
-.icon.searchBarIcon::before{
-    font-size: 30px;
+.searchBarIcon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
 }
 /*result header*/
-.resultHeader{
-    margin: 20px 0;
-    display: flex;
-    justify-content: flex-end;
-    font-size: 20px;
+.resultHeader {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
 }
-.resultSort{
-    list-style: none;
+
+.sort {
+  display: inline;
+  position: relative;
+  margin-right: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.4s;
 }
-.resultSort li{
-    display: inline;
-    position: relative;
-    margin-right: 5px;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.4s;
+.sort::after {
+  display: block;
+  position: absolute;
+  transition: all 0.4s;
+  left: 50%;
+  right: 50%;
+  content: "";
+  background-color: #905fd8;
 }
-.resultSort li::after{
-    display: block;
-    position: absolute; 
-    transition: all 0.4s;
-    left:50%;
-    right: 50%;
-    content: '';
-    background-color: #905fd8;
+.sort:hover {
+  background-color: #e2e4e6;
 }
-.resultSort li:hover{
-    background-color: #E2E4E6;
+.sort:hover::after {
+  left: 15%;
+  right: 15%;
+  bottom: 0;
+  height: 3px;
 }
-.resultSort li:hover::after{
-    left:15%;
-    right: 15%;
-    bottom: 0;
-    height: 3px;
+.sort.active {
+  color: #7430db;
+  font-weight: bold;
 }
-.resultSort li.active{
-    color: #7430db;
-    font-weight: bold;
-}
-.resultSort li.active:after{
-    left:0;
-    right: 0;
-    bottom: 0;
-    height: 3px;
+.sort.active:after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
 }
 
 /* resultcard */
-.resultCard{
-    position: relative;
-    left:0;
-    width: 100%;
-    background-color: #ffffff;
-    padding:20px;
-    border-radius: 5px;
-    border:solid 1px #cccccc;
-    transition: left 0.3s;
+.resultCard {
+  position: relative;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  border: solid 1px #cccccc;
+  transition: left 0.3s;
 }
-.resultCard:hover{
-    left:5px;
-    box-shadow: -1px 0 5px black ;
+.resultCard:hover {
+  left: 5px;
+  box-shadow: -1px 0 5px black;
 }
-.resultCard + .resultCard{
-    margin-top: 20px;
+.resultCard + .resultCard {
+  margin-top: 20px;
 }
-.resultCard .marker{
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    top:50%;
-    left:-37.5px;
-    border-radius: 50%;
-    transition: all 0.3s;
+.resultCard .marker {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: -31.5px;
+  border-radius: 50%;
+  transition: all 0.2s;
 }
-.resultCard:hover .marker{
-    left:-44px;
-    width: 15px;
-    height: 15px;
+.resultCard:hover .marker {
+  left: -39px;
+  width: 15px;
+  height: 15px;
 }
-/* .resultCard .marker::after{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top:-8px;
-    left:-8px;
-    border-radius: 50%;
-    background-color: transparent;
-    content: '';
+/* .resultCard .marker::after {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -8px;
+  left: -8px;
+  border-radius: 50%;
+  background-color: transparent;
+  content: "";
 } */
-.typePost+.marker{
-    /* background-color: #0000CD; */
-    background-color: #64707D;
+.typePost + .marker {
+  /* background-color: #0000CD; */
+  background-color: #64707d;
 }
-.typePost+.marker::after{
-    /* border:dashed 3px #0000CD; */
-    border:dashed 3px #64707D;
+.typePost + .marker::after {
+  /* border:dashed 3px #0000CD; */
+  border: dashed 3px #64707d;
 }
-.typeComment+.marker{
-    background-color: #64707D;
+.typeComment + .marker {
+  background-color: #64707d;
 }
-.typeComment+.marker::after{
-    border:dashed 3px #64707D;
+.typeComment + .marker::after {
+  border: dashed 3px #64707d;
 }
-.typeUser+.marker{
-    /* background-color: #03c54d; */
-    background-color: #64707D;
+.typeUser + .marker {
+  /* background-color: #03c54d; */
+  background-color: #64707d;
 }
-.typeUser+.marker::after{
-    /* border:dashed 3px #03c54d; */
-    border:dashed 3px #64707D;
+.typeUser + .marker::after {
+  /* border:dashed 3px #03c54d; */
+  border: dashed 3px #64707d;
 }
-.resultCard a{
-    text-decoration: none;
+.resultCard a {
+  text-decoration: none;
 }
-.resultCard .resultType{
-    position: absolute;
-    top:30px;
-    right:30px;
-    font-size: 20px;
-    padding: 5px;
-    border-radius: 5px;
+.resultCard .resultType {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
 }
-.typePost{
-    background-color: #0000cd;
-    color:white;
+.typePost {
+  background-color: #0000cd;
+  color: white;
 }
-.typeComment{
-    background-color: #64707D;
-    color:#ffffff;
+.typeComment {
+  background-color: #64707d;
+  color: #ffffff;
 }
-.typeUser{
-    background-color: #03c54d;
-    color:#ffffff;
+.typeUser {
+  background-color: #03c54d;
+  color: #ffffff;
 }
-.resultCardInfo{
-    display: flex;
+.resultCardInfo {
+  display: flex;
 }
-.authorImgWrapper{
-    height: 50px;
-    width: 50px;
+.authorImg {
+  height: 50px;
+  width: 50px;
 }
-.authorImg{
-    width: 100%;
-    border-radius: 50%;
+.authorInfoWrapper {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.authorInfoWrapper{
-    padding: 5px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.authorInfoWrapper div {
+  margin-bottom: 5px;
 }
-.authorInfoWrapper div{
-    margin-bottom: 5px;
+.authorName a {
+  color: #706f6f;
+  font-size: 18px;
 }
-.authorName a{
-    color:#706f6f;
-    font-size: 18px;
+.authorName a:hover {
+  color: #000000;
 }
-.authorName a:hover{
-    color:#000000;
-}
-.authorCreated{
-    color:#a0a0a0;
-    font-size: 13px;
+.authorCreated {
+  color: #a0a0a0;
+  font-size: 13px;
 }
 /* card details*/
-.resultCardDetails{
-    padding: 0 50px;
+.resultCardDetails {
+  padding: 0 50px;
 }
-.resultCardTitle{
-    font-size: 30px;
+.resultCardTitle {
+  font-size: 30px;
 }
-.resultCardTitleLink{
-    color: black;
+.resultCardTitleLink {
+  color: black;
 }
-.resultCardTitleLink:hover{
-    color: #3B49DF;
+.resultCardTitleLink:hover {
+  color: #3b49df;
 }
-.resultCardTags{
-    margin:10px 0;
-    display: block;
-    list-style: none;
+.cardTag {
+  display: inline;
+  background-color: #64a2ff;
+  padding: 2px;
+  margin-left: 5px;
+  border-radius: 5px;
 }
-.cardTag{
-    display: inline;
-    background-color: #64a2ff;
-    padding:2px;
-    margin-left: 5px;
-    border-radius: 5px;
+.cardTag a {
+  color: white;
 }
-.cardTag a{
-    color:white;
+.cardTag a::before {
+  content: "#";
+  padding-right: 3px;
 }
-.cardTag a::before{
-    content: '#';
-    padding-right: 3px;
+.resultCardView {
+  position: relative;
+  right: 50px;
+  margin-top: 20px;
+  font-size: 14px;
 }
-.resultCardView{
-    position: relative;
-    right:50px;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
 
 /* icon */
 
-@font-face{
-    font-family: icon;
-    src: url(../icomoon-v1.0/fonts/icomoon.ttf) format('truetype');
+@font-face {
+  font-family: icon;
+  src: url(../icomoon-v1.0/fonts/icomoon.ttf) format("truetype");
 }

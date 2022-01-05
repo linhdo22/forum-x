@@ -12,7 +12,7 @@
 
 <body>
     <?php require '../common/header.php' ?>
-    <div class="container">
+    <div class="container-fluid">
         <div id="welcome-section">
             <h1>Welcome to this community</h1>
             <p><i>Choose better for success </i></p>

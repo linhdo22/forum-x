@@ -61,16 +61,43 @@ function sortAz(e) {
   }
   sort(e, compareAsc, compareDesc);
 }
+
+function updateSubcribe(value) {
+  let formData = new FormData();
+  formData.append("update-subcribe", 1);
+  formData.append("value", value);
+  formData.append("target", getParameterByName("profile"));
+  formData.append("subBy", window.user.member_id);
+  return fetch("./xuly-profile.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (body) {
+      console.log(body);
+      render(body);
+    });
+}
+
 function subcribe(e) {
+  if (!window.user) {
+    e.target.checked = !e.target.checked;
+    return;
+  }
   let subCountView = document.getElementsByClassName("subText")[0];
   let subCount = parseInt(subCountView.innerText);
   if (e.target.checked) {
     subCount += 1;
+    updateSubcribe(1);
   } else {
     subCount -= 1;
+    updateSubcribe(0);
   }
   subCountView.innerText = subCount;
 }
+
 
 function getPublicPosts() {
   let formData = new FormData();
@@ -123,9 +150,9 @@ function render(data) {
 }
 
 window.onload = () => {
-  document.getElementById("sortView").addEventListener("click", sortView);
-  document.getElementById("sortNewest").addEventListener("click", sortDate);
-  document.getElementById("sortAz").addEventListener("click", sortAz);
+  // document.getElementById("sortView").addEventListener("click", sortView);
+  // document.getElementById("sortNewest").addEventListener("click", sortDate);
+  // document.getElementById("sortAz").addEventListener("click", sortAz);
   document.getElementsByClassName("subButtonCb")[0].onchange = subcribe;
   getPublicPosts();
 };

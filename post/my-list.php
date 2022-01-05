@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="./my-list.css">
     <script src="./my-list.js"></script>
     <title>List Post</title>
