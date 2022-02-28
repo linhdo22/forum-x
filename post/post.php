@@ -52,7 +52,7 @@ if (!isset($_SESSION)) {
                     <?php
                     if ($post['public'] == '1') {
 
-                        echo '<textarea id="textare" placeholder="Leave a comment"></textarea>';
+                        echo '<textarea id="textarea" placeholder="Leave a comment"></textarea>';
                         echo '<div id="write-comment-warn" style="display: none;" class="text-danger">You must login to comment this post</div>';
                         echo '<div id="create-comment" class="btn btn-success my-3">Write comment</div>';
 
@@ -61,7 +61,7 @@ if (!isset($_SESSION)) {
                         tinymce.init({
                             resize:false,
                             height:150,
-                            selector: 'textarea',
+                            selector: '#textarea',
                             plugins: 'advlist link image lists',
                             menubar: false,
                             toolbar: ' bold italic | forecolor backcolor',

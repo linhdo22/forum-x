@@ -6,6 +6,16 @@
 <link rel='stylesheet' href='../assets/bootstrap-5.1.3-dist/css/bootstrap.min.css'>
 <link rel="stylesheet" href="../assets/fontawesome-free-5.15.4-web/css/all.min.css">
 
+<!-- messenger -->
+<script src="../common/js/config.js"></script>
+<script src="../assets/js/socket.io.min.js"></script>
+<script src="../common/js/socket.js"></script>
+<script src="../common/js/tab-manager.js"></script>
+<script src="../common/js/messenger.js"></script>
+<script src="../common/js/messenger-api.js"></script>
+<link rel='stylesheet' href='../common/css/messenger.css'>
+
+
 <div class="header">
     <div class="container">
         <div class="row">
@@ -23,22 +33,41 @@
             </div>
             <div class="col-md-4 offset-md-2 col-7 offset-1 d-flex pt-3">
                 <div class="navSearch">
-                    <div class="btn navSearchHeader ">
+                    <div id="navSearchHeader" class="btn">
                         <i class="fas fa-search fs-4"></i>
                     </div>
                     <div class="navSearchContent pt-2">
-                        <form action="../search/search.php" class='searchForm'>
+                        <form action="../search/search.php" id='searchForm'>
                             <input type="text" name='search' class="navSearchInput">
                         </form>
                     </div>
                 </div>
+                <?php
+                if (isset($_SESSION['user'])) {
+                    // this shouldn't use bootstrap , should use btn and manage by js for prenting re-render each new message
+                    echo '<div class="dropdown">
+                    <div id="messenger-title" class="btn disabled position-relative" data-bs-toggle="dropdown">
+                        <i class="fas fa-comments fs-4 "></i>
+                        <span id="noti-new-message" class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle d-none"></span>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-end p-2 rounded shadow pt-0" >
+                        <div class="fs-4 my-2">
+                            Messenger
+                        </div>
+                        <div id="message-list" class="overflow-hidden" style="width:400px">
+                            
+                        </div>
+                    </div>
+                    
+                    </div>';
+                }
+                ?>
                 <div class="dropdown">
                     <div class="btn" data-bs-toggle="dropdown">
                         <i class="fas fa-bars fs-4"></i>
                     </div>
                     <div class="dropdown-menu dropdown-menu-end p-2 rounded shadow" style="width:220px;">
                         <?php
-                        header('Content-Type: text/html; charset=UTF-8');
                         if (isset($_SESSION['user'])) {
                             echo '<script>
                                 window.user=' . json_encode($_SESSION['user']) . '
@@ -52,8 +81,7 @@
                                 <a class="dropdown-item" href="../post/my-list.php">Posts manager</a>
                                 <a class="dropdown-item" href="../profile/setting-profile.php">Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../login/login.php?logout=1">Log out</a>
-                                </div>';
+                                <a class="dropdown-item" href="../login/login.php?logout=1">Log out</a>';
                         } else {
                             echo '<div class="loginNavMenuOptions">
                             <a class="btn btn-outline-white w-100" href="../register/register.php">Create Account</a>
@@ -61,12 +89,42 @@
                             </div>';
                         }
                         ?></div>
-                    <!-- <div class=" navMenuHeader">
-                        <i class="icon icon-menu  "></i>
-                    </div> -->
 
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- bubble chat  -->
+<div id="bubble-container" class="position-fixed end-0 bottom-0 d-flex align-items-end">
+    <div id="converstation-list" class="d-flex">
+        <!-- <div class="bg-white mx-2 d-flex flex-column border border-secondary rounded-top" style="width: 250px;height:350px;">
+            <div class="bg-primary p-2 d-flex text-white align-items-center">
+                <div class="fs-5">Name</div>
+                <div class="ms-auto">
+                    <i class="btn fas fa-times fs-4 p-0 text-white"></i>
+                </div>
+            </div>
+            <div class="bg-white flex-fill p-2">
+                <div class="d-flex align-items-center">
+                    <div>a</div>
+                    <div class="chat-message bg-primary text-white p-1 mx-1">text</div>
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    <div>a</div>
+                    <div>text</div>
+                </div>
+            </div>
+            <div class="border-top p-2">
+                <textarea placeholder="Send a wish" class="chat-input p-1"></textarea>
+            </div>
+        </div> -->
+    </div>
+    <div id="bubble-list" class="m-2">
+        <!-- <div class="bubble-chat my-2">
+            <img src="../upload-image/avatar/avatar-1.jpg" class="rounded-circle">
+            <i class="btn fas fa-times p-0 text-white rounded-circle"></i>
+        </div> -->
     </div>
 </div>

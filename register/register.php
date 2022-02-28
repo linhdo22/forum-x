@@ -34,7 +34,7 @@ if (!isset($_SESSION)) {
                 </div>
                 <p class='errorHandle usernameError'>Invalid username format</p>
                 <div class="inputLogin">
-                    <input type="text" id="registerPassword" name="password"></input>
+                    <input type="password" id="registerPassword" name="password"></input>
                     <label for="registerPassword">Password</label>
                 </div>
                 <p class='errorHandle passwordError'>Please enter password</p>

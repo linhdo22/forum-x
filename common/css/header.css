@@ -1,7 +1,6 @@
 img {
   object-fit: cover;
   object-position: center;
-  background-color: white;
 }
 a {
   text-decoration: none !important;
@@ -47,7 +46,7 @@ a {
   width: 300px;
   justify-content: flex-end;
 }
-.navSearchHeader {
+#navSearchHeader {
   order: 1;
   cursor: pointer;
   margin-left: 5px;
@@ -59,7 +58,7 @@ a {
   flex-grow: 1;
   justify-content: flex-end;
 }
-.searchForm {
+#searchForm {
   width: 0%;
   transition: width 0.8s;
 }
@@ -75,94 +74,6 @@ a {
   border: solid 2px #363636;
 }
 
-.navMenuHeader.ext {
-  color: #64a7ff;
-  padding-bottom: 20px;
-  background-color: red;
-}
-.navMenuContent {
-  position: absolute;
-  top: 60px;
-  right: 0px;
-  background-color: white;
-  box-shadow: 0 0 5px gray;
-  border: solid 1px gray;
-  border-top: none;
-  border-radius: 15px;
-  display: none;
-  padding: 10px;
-  min-width: 200px;
-}
-.navMenuOptions {
-  text-align: right;
-}
-.navMenuOptions > span + div {
-  margin-top: 10px;
-}
-.optionHeader {
-  border-radius: 10px;
-  padding: 5px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.optionHeader:hover {
-  background-color: #cccccc;
-}
-.optionHeaderImgWrapper {
-  border: solid 3px #64a7ff;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-  margin-right: 20px;
-}
-.optionHeaderImg {
-  height: 100px;
-  width: 100px;
-  z-index: -1;
-}
-
-.navMenuOptions .options {
-  cursor: pointer;
-  padding: 10px 10px;
-  margin: 0 10px;
-  border-radius: 10px;
-}
-.navMenuOptions .options:hover {
-  background-color: #cccccc;
-}
-.navMenuOptions .options a {
-  text-decoration: none;
-  color: black;
-}
-.line {
-  display: block;
-  margin: 0 auto;
-  padding-top: 10px;
-  width: 80%;
-  border-bottom: solid 1px gray;
-}
-/*unlogin nav menu option*/
-
-/*icon*/
-.icon {
-  display: inline-block;
-  font-style: normal;
-  font-family: icon;
-}
-.icon-search::before {
-  content: "\e986";
-  font-size: 20px;
-}
-.searchOn .icon-search {
-  color: #64a7ff;
-}
-.icon-menu::before {
-  content: "\e9bd";
-  font-size: 20px;
-}
-@font-face {
-  font-family: icon;
-  src: url("../../icomoon-v1.0/fonts/icomoon.ttf") format("truetype");
+#message-container {
+  width: 400px;
 }

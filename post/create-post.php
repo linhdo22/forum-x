@@ -82,7 +82,7 @@ if (!isset($_SESSION)) {
     </div>
     <script>
         tinymce.init({
-            selector: 'textarea',
+            selector: '#textarea',
             plugins: 'advlist link image lists',
             menubar: false,
             toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +

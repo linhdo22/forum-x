@@ -30,8 +30,7 @@ if (isset($_POST['register'])) {
         // Dừng chương trình
         die();
     } else {
-        $sql = "INSERT INTO member (username, password) VALUES ('$username','$password')";
-        echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="../login/login.php";</script>';
+        $sql = "INSERT INTO member (username, password,name) VALUES ('$username','$password','$username')";
 
         if (mysqli_query($conn, $sql)) {
             echo "Tên đăng nhập: " . $_POST['username'] . "<br/>";
@@ -39,5 +38,6 @@ if (isset($_POST['register'])) {
         } else {
             echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý"); window.location="register.php";</script>';
         }
+        echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="../login/login.php";</script>';
     }
 }

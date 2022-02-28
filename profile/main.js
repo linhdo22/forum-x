@@ -98,7 +98,6 @@ function subcribe(e) {
   subCountView.innerText = subCount;
 }
 
-
 function getPublicPosts() {
   let formData = new FormData();
   formData.append("get-public-posts", 1);
@@ -149,22 +148,37 @@ function render(data) {
   }, "");
 }
 
-window.onload = () => {
-  // document.getElementById("sortView").addEventListener("click", sortView);
-  // document.getElementById("sortNewest").addEventListener("click", sortDate);
-  // document.getElementById("sortAz").addEventListener("click", sortAz);
+window.addEventListener("load", () => {
   document.getElementsByClassName("subButtonCb")[0].onchange = subcribe;
   getPublicPosts();
-};
+});
 
-// const data = [
-//   {
-//     post_id: 1,
-//     title: "The way to do something 1",
-//     preContet: "the one thing u need to do some thing is",
-//     preImg: "",
-//     date: "date",
-//     view: "3512",
-//     vote: "123"
-//   },
-// ];
+// messenger
+
+window.addEventListener("load", () => {
+  const chatBtn = document.getElementById("chat-btn");
+  if (chatBtn) {
+    chatBtn.addEventListener("click", () => {
+      window.messengerAPI
+        .getConverstationId()
+        .then(function (body) {
+          window.messengerAPI
+            .getUserInfo(getParameterByName("profile"))
+            .then((data) => {
+              if (body.error) {
+                window.messenger.utils.openNewChatBox(data[0]);
+                return;
+              }
+              window.messenger.utils.openChatBox({
+                converstationId: body[0].converstation_id,
+                sequence: body[0].count,
+                target: data[0],
+              });
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  }
+});

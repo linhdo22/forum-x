@@ -25,10 +25,9 @@ window.addEventListener("load", () => {
   //clock
   setInterval(time, 1000);
 
-
   //search
-  const searchForm = document.getElementsByClassName("searchForm")[0];
-  const navSearchHeader = document.getElementsByClassName("navSearchHeader")[0];
+  const searchForm = document.getElementById("searchForm");
+  const navSearchHeader = document.getElementById("navSearchHeader");
   const navSearchContent =
     document.getElementsByClassName("navSearchContent")[0];
   const navSearchInput = document.getElementsByClassName("navSearchInput")[0];

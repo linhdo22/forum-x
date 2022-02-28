@@ -1,13 +1,9 @@
 <?php
-
+require_once __DIR__ . "/../controller/connection.php";
 //Xử lý đăng nhập
 if (isset($_POST['login'])) {
     //Kết nối tới database
-    $connect = mysqli_connect('localhost', 'root', 'Vak2272001', 'forum-x') or die('Không thể kết nối tới database');
-    mysqli_set_charset($connect, 'UTF8');
-    if ($connect === false) {
-        die("ERROR: Could not connect. " . mysqli_connect_error());
-    }
+    $connect = connect();
 
     //Lấy dữ liệu nhập vào
     $username = addslashes($_POST['username']);
@@ -24,14 +20,8 @@ if (isset($_POST['login'])) {
 
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
-    if (!$result) {
-        echo "Tên đăng nhập hoặc mật khẩu không đúng!";
-    } else {
-        echo "Đăng nhập thành công!";
-    }
-
     //Lấy mật khẩu trong database ra
-    $row = mysqli_fetch_array($result);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
     //So sánh 2 mật khẩu có trùng khớp hay không
     if ($password != $row['password']) {
@@ -39,6 +29,7 @@ if (isset($_POST['login'])) {
         exit;
     }
     //Lưu tên đăng nhập
+    unset($row['password']);
     $_SESSION['user'] = $row;
     $connect->close();
     header('Location: ../home/home.php');

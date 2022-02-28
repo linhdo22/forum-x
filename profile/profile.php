@@ -44,7 +44,12 @@ if (!isset($_SESSION)) {
                                                                 } ?> class="subButtonCb">
                         <label for="subButtonCb">Subcribe</label>
                     </div>
-                </div>
+                    <?php if (isset($_SESSION['user'])) {
+                        echo '<div id="chat-btn" class="btn btn-outline-primary fs-4 my-0" style="border-radius:20px">
+                            <i class="fas fa-comment "></i>
+                        </div>';
+                    } ?>
+                </div>'
                 <div class='text-center fs-2 fw-bold'><?php echo $profile['name']; ?></div>
                 <div class="d-flex flex-column align-items-center pb-3">
                     <?php

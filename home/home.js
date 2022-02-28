@@ -185,7 +185,7 @@ const renderNewNews = (list) => {
         <img style="width:30%; object-fit:cover; object-position:center;" src="../${cur.image}">
         <div class="story-detail ms-2">
             <div class="type-post ps-2">NEWS</div>
-            <a href="../post/post?id=${cur.post_id}">
+            <a href="../post/post.php?id=${cur.post_id}">
                 <h3 class="ps-1">${cur.title}</h3>
             </a>
             <a href="../profile/profile.php?profile=${cur.member_id}"><div class="author fw-bold p-2">${cur.name}</div></a>

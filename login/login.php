@@ -24,7 +24,7 @@ if (!isset($_SESSION)) {
     }
     require 'xuly.php';
     require '../common/header.php';
-     ?>
+    ?>
 
     <div class="container">
         <div class="row " style="margin:5rem 0;">
@@ -42,7 +42,7 @@ if (!isset($_SESSION)) {
                 <p class='errorHandle passwordError'>Please enter password</p>
                 <input type="submit" value="Login" name="login" class="loginBtn">
                 <div class='extended'>
-                    <a href="#" class='signup'>Sign up</a>
+                    <a href="../register/register.php" class='signup'>Sign up</a>
                     <a href="#" class='forgetpassword'>forget password</a>
                 </div>
             </form>
