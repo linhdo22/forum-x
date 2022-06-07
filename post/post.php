@@ -22,10 +22,13 @@ if (!isset($_SESSION)) {
     require '../controller/post.php';
     if (!isset($_GET['id'])) {
         header('Location: ../home/home.php');
+
+
     }
     $post = getPost($_GET['id']);
     if (!$post || $post['public'] == '0' && $_SESSION['user']['member_id'] != $post['author']) {
         header('Location: ../home/home.php');
+        
     }
     $authorId = $post['author'];
     echo "<script> window.authorId = $authorId </script>";
