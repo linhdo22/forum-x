@@ -3,6 +3,8 @@ require_once __DIR__ . "/connection.php";
 
 function getProfile($memberId)
 {
+
+
     $connect = connect();
     $query = "select * from member " .
         "where member.member_id = $memberId ";
@@ -21,11 +23,14 @@ function getProfile($memberId)
         $data['avatar'] = $row['avatar'];
         $data['contacts'] = getContacts($row['member_id']);
     }
+
+
     mysqli_close($connect);
     return $data;
 }
 function getContacts($memberId)
 {
+    
     $connect = connect();
     $query = "select * from member_contact_map where member_id = '$memberId' ;";
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
