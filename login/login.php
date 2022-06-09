@@ -33,17 +33,20 @@ if (!isset($_SESSION)) {
                 <div class="inputLogin">
                     <input type="text" id="loginUsername" name="username"></input>
                     <label for="loginUsername">Username</label>
+
                 </div>
                 <p class='errorHandle usernameError'>Invalid username format</p>
                 <div class="inputLogin">
                     <input type="password" id="loginPassword" name="password"></input>
                     <label for="loginPassword">Password</label>
+
                 </div>
                 <p class='errorHandle passwordError'>Please enter password</p>
                 <input type="submit" value="Login" name="login" class="loginBtn">
                 <div class='extended'>
                     <a href="../register/register.php" class='signup'>Sign up</a>
                     <a href="#" class='forgetpassword'>forget password</a>
+                    
                 </div>
             </form>
         </div>
