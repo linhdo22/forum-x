@@ -7,6 +7,7 @@ if (!isset($_SESSION)) {
 }
 ?>
 
+
 <head>
     <meta charset='utf-8'>
     <title>Register</title>
@@ -15,6 +16,7 @@ if (!isset($_SESSION)) {
     <script src='../common/js/header.js'></script>
     <script src='main.js'></script>
 </head>
+
 
 <body>
     <?php
