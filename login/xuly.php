@@ -10,6 +10,7 @@ if (isset($_POST['login'])) {
     $password = addslashes($_POST['password']);
 
     
+
     //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
     if (!$username || !$password) {
         echo "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu. <a href='javascript: history.go(-1)'>Trở lại</a>";
@@ -19,8 +20,10 @@ if (isset($_POST['login'])) {
     //Kiểm tra tên đăng nhập có tồn tại không
     $query = "SELECT * FROM member WHERE username='$username'";
 
+
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
+    
     //Lấy mật khẩu trong database ra
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
