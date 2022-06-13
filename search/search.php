@@ -14,7 +14,7 @@ if (!isset($_SESSION)) {
     <script src="./main.js"></script>
     <title>Search</title>
 </head>
-
+  
 <body>
     <?php require '../common/header.php' ?>
     <div class="container">
@@ -25,7 +25,7 @@ if (!isset($_SESSION)) {
                     <li id="filTypeAll" class="filterType active">All</li>
                     <li id="filPost" class="filterType">Post</li>
                     <li id="filComment" class="filterType">Comment</li>
-                    <li id="filUser" class="filterType">User</li>
+                    <li id="filUser" class="filterType">User</li>  
                 </ul>
                 <ul class="listTag">
                     <li id="filTagAll" class="filterTag fst-italic active">All</li>
