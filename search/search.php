@@ -24,13 +24,13 @@ if (!isset($_SESSION)) {
                 <ul class="listType">
                     <li id="filTypeAll" class="filterType active">All</li>
                     <li id="filPost" class="filterType">Post</li>
-                    <li id="filComment" class="filterType">Comment</li>
-                    <li id="filUser" class="filterType">User</li>  
+                    <li id="filComment" class="filterType">Comment</li>  
+                    <li id="filUser" class="filterType">User</li>    
                 </ul>
                 <ul class="listTag">
-                    <li id="filTagAll" class="filterTag fst-italic active">All</li>  
-                    <li id="filArt" class="filterTag fst-italic ">#Art</li>
-                    <li id="filBiology" class="filterTag fst-italic ">#Biology</li>  
+                    <li id="filTagAll" class="filterTag fst-italic active">All</li>    
+                    <li id="filArt" class="filterTag fst-italic ">#Art</li>  
+                    <li id="filBiology" class="filterTag fst-italic ">#Biology</li>    
                     <li id="filMechanic" class="filterTag fst-italic ">#Mechanic</li>
                     <li id="filNews" class="filterTag fst-italic ">#News</li>
                     <li id="filScience" class="filterTag fst-italic ">#Science</li>
