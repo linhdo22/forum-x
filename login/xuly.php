@@ -10,6 +10,7 @@ if (isset($_POST['login'])) {
     $password = addslashes($_POST['password']);
 
     
+    
 
     //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
     if (!$username || !$password) {
@@ -22,6 +23,7 @@ if (isset($_POST['login'])) {
 
 
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+
 
     
     //Lấy mật khẩu trong database ra
