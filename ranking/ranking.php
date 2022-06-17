@@ -68,7 +68,7 @@ if (!isset($_SESSION)) {
                             <a href="../post/post.php?id=' . $topVoteList[$i]["post_id"] . '" class="order-name">' . $topVoteList[$i]["title"] . '</a><br>
                             <a href="../profile/profile.php?profile=' . $topVoteList[$i]["member_id"] . '" class="order-detail">' . $topVoteList[$i]["name"] . '</a><br>
                             <span class="order-date">' . date_format($date, 'M, j Y') . '</span>
-                            <div>Vote: ' . $topVoteList[$i]["vote"] . '</div>
+                             <div>Vote: ' . $topVoteList[$i]["vote"] . '</div>
                         </div>
                     </div>';
                     }

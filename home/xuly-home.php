@@ -2,9 +2,9 @@
 require '../controller/post.php';
 
 if (isset($_POST['get-lastest-post'])) {
-    die(json_encode(getLastestPost()));
+     die(json_encode(getLastestPost()));
 }
 
 if (isset($_POST['get-lastest-news'])) {
-    die(json_encode(getLastestNews()));
+     die(json_encode(getLastestNews()));
 }
