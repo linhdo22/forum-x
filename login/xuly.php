@@ -9,6 +9,7 @@ if (isset($_POST['login'])) {
     $username = addslashes($_POST['username']);
     $password = addslashes($_POST['password']);
 
+    
     //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
     if (!$username || !$password) {
         echo "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu. <a href='javascript: history.go(-1)'>Trở lại</a>";
