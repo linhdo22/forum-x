@@ -8,7 +8,7 @@ window.config.formatDate = {
     minute: "2-digit",
     year: "numeric",
     month: "long",
-    day: "numeric",
+    day: "numeric",    
   },
 };
 
