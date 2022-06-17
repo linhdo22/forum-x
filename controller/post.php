@@ -25,7 +25,7 @@ function createPost($title, $content, $userId, $tags)
     }
     mysqli_close($connect);
     return $lastPostId;
-}
+}  
 
 function updatePost($postId, $title, $content, $tags)
 {
