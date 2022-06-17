@@ -28,7 +28,7 @@ if (!isset($_SESSION)) {
     <div class="container my-5 py-3">
         <div class="row">
             <!----------------------------------------------------- col1 ---------------------------------------------->
-            <div class="col-3 px-2">
+            <div class="col-4 px-2">
                 <div class="col-base">
                     <div class="tittle">
                         <h3>Top View</h3>
@@ -52,7 +52,7 @@ if (!isset($_SESSION)) {
 
                 </div>
             </div>
-            <div class="col-3 px-2">
+            <div class="col-4 px-2">
                 <div class="col-base">
                     <div class="tittle">
                         <h3>Top Vote</h3>
@@ -75,28 +75,7 @@ if (!isset($_SESSION)) {
                     ?>
                 </div>
             </div>
-            <div class="col-3 px-2">
-                <div class="col-base">
-                    <div class="tittle">
-                        <h3>Top Author</h3>
-                    </div>
-                    <?php
-                    $topAuthorList = getTopSubUser();
-                    $topAuthorListCount = count($topAuthorList);
-                    for ($i = 0; $i < $topAuthorListCount; $i++) {
-                        echo '<div class="table-order">
-                        <div class="order-number">#' . ($i + 1) . '</div>
-                        <div class="order-content">
-                            <a href="../profile/profile.php?profile=' . $topAuthorList[$i]["member_id"] . '" class="order-name">' . $topAuthorList[$i]["name"] . '</a><br>
-                            <div>Subcribe: ' . $topAuthorList[$i]["subcribe"] . '</div>
-                        </div>
-                    </div>';
-                    }
-                    ?>
-
-                </div>
-            </div>
-            <div class="col-3 px-2">
+            <div class="col-4 px-2">
                 <div class="col-base">
                     <div class="tittle">
                         <h3>Top Author</h3>

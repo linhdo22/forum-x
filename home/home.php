@@ -19,7 +19,7 @@ if (!isset($_SESSION)) {
 <body>
     <?php require '../common/header.php';
     require '../controller/post.php';
-    $lastestPosts = getLastestPost();
+    $lastestPosts = getLastestPost();  
     $lastestNews = getLastestNews();
     ?>
     <div class="container my-5">
