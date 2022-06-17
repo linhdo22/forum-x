@@ -24,10 +24,10 @@ if (!isset($_SESSION)) {
     require '../controller/post.php';
     require '../controller/member.php';
     ?>
-    <!--------------------------------------- header ----------------------------------------------------->
+    <!---------------------------------------- header ----------------------------------------------------->
     <div class="container my-5 py-3">
         <div class="row">
-            <!----------------------------------------------------- col1 ---------------------------------------------->
+            <!------------------------------------------------------ col1 ---------------------------------------------->
             <div class="col-3 px-2">
                 <div class="col-base">
                     <div class="tittle">
@@ -69,7 +69,7 @@ if (!isset($_SESSION)) {
                             <a href="../profile/profile.php?profile=' . $topVoteList[$i]["member_id"] . '" class="order-detail">' . $topVoteList[$i]["name"] . '</a><br>
                             <span class="order-date">' . date_format($date, 'M, j Y') . '</span>
                             <div>Vote: ' . $topVoteList[$i]["vote"] . '</div>
-                        </div>
+                        </div> 
                     </div>';
                     }
                     ?>
