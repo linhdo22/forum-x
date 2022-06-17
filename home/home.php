@@ -17,10 +17,10 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
-    <?php require '../common/header.php';
-    require '../controller/post.php';
-    $lastestPosts = getLastestPost();
-    $lastestNews = getLastestNews();
+     <?php require '../common/header.php';
+     require '../controller/post.php';
+     $lastestPosts = getLastestPost();
+     $lastestNews = getLastestNews();
     ?>
     <div class="container my-5">
         <!-- <div class="main-container"> -->
